@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Bowler
+    <h1>@ViewBag.type Bowler</h1>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-9">
+
+            <form method="post" asp-action="@(ViewBag.type + "Bowler")">
+                    <input type="hidden" asp-for="BowlerID" />
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerFirstName">First Name:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerFirstName" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerMiddleInit">Middle Initial:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerMiddleInit" maxlength="1" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerLastName">Last Name:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerLastName" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerAddress">Address:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerAddress" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerCity">City:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerCity" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerState">State:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerState" maxlength="2" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerZip">Zip:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerZip" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="BowlerPhoneNumber">Phone Number:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <input asp-for="BowlerPhoneNumber" />
+                    </div>
+                    <div class="form-group my-1">
+                        <label asp-for="Team">Pick Team:</label>
+                    </div>
+                    <div class="form-group my-1">
+                        <select asp-for="TeamID">
+                            @foreach (var t in ViewBag.listTeams)
+                            {
+                                <option value="@t.TeamID">@t.TeamName</option>
+                            }
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" type="submit">@ViewBag.type Bowler</button>
+                </form>
+</div>
+        <div class="col-2"></div>
+    </div>
